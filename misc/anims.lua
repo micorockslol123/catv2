@@ -1,5 +1,5 @@
--- update: found the original r6 animate
-local Figure = game.Players.LocalPlayer.Character.GelatekReanimate
+
+local Figure = game.Players.LocalPlayer.Character["Cat"]
 local Torso = Figure:WaitForChild("Torso")
 local RightShoulder = Torso:WaitForChild("Right Shoulder")
 local LeftShoulder = Torso:WaitForChild("Left Shoulder")

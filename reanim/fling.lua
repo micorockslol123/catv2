@@ -13,6 +13,7 @@ local Loops = {};
 local RunService = game:GetService("RunService");
 local Player = game:GetService("Players").LocalPlayer;
 local Character = Player["Character"];
+   local Fling = Character:FindFirstChild("Torso") or Character:FindFirstChild("UpperTorso")
 local Humanoid = Character:FindFirstChildWhichIsA("Humanoid");
 Character.Archivable = true
 local fldr = Instance.new("Folder", workspace)

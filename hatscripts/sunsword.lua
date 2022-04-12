@@ -149,10 +149,10 @@ LW.Parent=ch.Torso
         
         function swait(num)
     if num==0 or num==nil then
-    game:service'RunService'.Heartbeat:wait(0)
+    wait()
     else
     for i=0,num do
-    game:service'RunService'.Heartbeat:wait(0)
+    wait()
     end
     end
     end

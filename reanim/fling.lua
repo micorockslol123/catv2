@@ -122,7 +122,7 @@ table.insert(Loops, RunService.Heartbeat:Connect(function()
             v.Handle.Velocity = Vector3.new(-27.999,0,0)
         end
     end
-    Fling.Velocity = Vector3.new(2000,2000,2000)
+    Fling.Velocity = Vector3.new(1111,1111,1111)
     -- CFraming
     if Humanoid.RigType == Enum.HumanoidRigType.R6 then
         Character["Torso"].CFrame = Clone["Torso"].CFrame

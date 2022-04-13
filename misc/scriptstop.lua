@@ -4,6 +4,8 @@ for i,v in pairs(_G.EventTable) do
 end
 local Character = game.Players.LocalPlayer.Character["Cat"]
 local Torso = Character.Torso
+Character.Humanoid.WalkSpeed = 0
+Character.Humanoid.JumpPower = 0
 local Head = Character.Head
 local Root = Character.HumanoidRootPart
 local RA = Character["Right Arm"]
@@ -115,6 +117,17 @@ LH.Part0 = Torso
 LH.Part1 = LL
 LH.C0 = CFrame.new(-1, -1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
 LH.C1 = CFrame.new(-0.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-wait(0.5)
+for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+	v:Stop()
+end
+wait(1)
+for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+	v:Stop()
+end
 _G.ScriptStop = false
+for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+	v:Stop()
+end
+Character.Humanoid.WalkSpeed = 16
+Character.Humanoid.JumpPower = 50
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()

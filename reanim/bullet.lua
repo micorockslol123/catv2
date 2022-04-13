@@ -178,6 +178,9 @@ Humanoid.Died:Connect(function()
     pcall(function()
         _G.Disconnect = false
     	_G.Somethinggggggg:Disconnect()
+	for i,v in pairs(_G.EventTable) do
+		v:Disconnect()
+	end
 end)
 end)
 workspace.Camera.CameraSubject = CloneHumanoid

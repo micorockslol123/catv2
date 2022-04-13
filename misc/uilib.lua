@@ -1,5 +1,8 @@
 local Library = {}
 function Library:Create(text)
+	if game.CoreGui:FindFirstChild("ProjectCatUI") then
+		game.CoreGui:FindFirstChild("ProjectCatUI"):Destroy()	
+	end
 	local ProjectCatUI = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local Title = Instance.new("TextLabel")

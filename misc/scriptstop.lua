@@ -131,3 +131,17 @@ end
 Character.Humanoid.WalkSpeed = 16
 Character.Humanoid.JumpPower = 50
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()
+
+if _G.BulletEnabled == true then
+pcall(function()
+_G.Somethinggggggg:Disconnect()
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+Bullet.BodyPosition:Destroy()
+_G.Disconnect = false
+Bullet.SelectionBox:Destroy()
+Bullet.Transparency = 0	
+if game.Players.LocalPlayer.Character:FindFirstChild("Bullet") then
+game.Players.LocalPlayer.Character:FindFirstChild("Bullet").Transparency = 1				
+end
+end)
+end

@@ -67,7 +67,7 @@ local function Align(Part0,Part1,Position,Orientation)
 end
 	
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/loadlibrary.lua"))()
-attack = false
+local attack = false
 
 if _G.BulletEnabled == true then
 local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
@@ -172,11 +172,11 @@ LW = Create("Weld"){
 	
 mouse = Ply:GetMouse()
 
-function RemoveOutlines(part)
+local function RemoveOutlines(part)
 	part.TopSurface, part.BottomSurface, part.LeftSurface, part.RightSurface, part.FrontSurface, part.BackSurface = 10, 10, 10, 10, 10, 10
 end
 	
-function CreatePart(FF, Par, Mat, Ref, Tra, BC, Nam, Siz)
+local function CreatePart(FF, Par, Mat, Ref, Tra, BC, Nam, Siz)
 	local Part = Create("Part"){
 		formFactor = FF,
 		Parent = Par,
@@ -194,7 +194,7 @@ function CreatePart(FF, Par, Mat, Ref, Tra, BC, Nam, Siz)
 	return Part
 end
 	
-function CreateMesh(Ms, Par, MType, MId, OS, Sca)
+local function CreateMesh(Ms, Par, MType, MId, OS, Sca)
 	local Msh = Create(Ms){
 		Parent = Par,
 		Offset = OS,
@@ -206,7 +206,7 @@ function CreateMesh(Ms, Par, MType, MId, OS, Sca)
 	end
 end
 	
-function CreateWeld(Par, PartA, PartB, CA, CB)
+local function CreateWeld(Par, PartA, PartB, CA, CB)
 	local Weld = Create("Weld"){
 		Parent = Par,
 		Part0 = PartA,
@@ -217,7 +217,7 @@ function CreateWeld(Par, PartA, PartB, CA, CB)
 	return Weld
 end
 	
-function CreateSound(id, par, vol, pit) 
+local function CreateSound(id, par, vol, pit) 
 	coroutine.resume(coroutine.create(function()
 		local sou = Create("Sound"){
 			Parent = par or workspace,
@@ -429,7 +429,7 @@ PE2.Size = NumberSequence.new(.7)
 PE2.LightEmission = 1
 PE2.Texture = "rbxassetid://87729590"
 
-function CylinderEffect(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
+local function CylinderEffect(brickcolor, cframe, x1, y1, z1, x3, y3, z3, delay)
 	local prt = CreatePart(3, workspace, "SmoothPlastic", 0, 0, brickcolor, "Effect", Vector3.new(0.2, 0.2, 0.2))
 	prt.Anchored = true
 	prt.CFrame = cframe
@@ -448,7 +448,7 @@ end
 local Ammo = 10
 local Depleted = false
 local something
-function Shoot(asd, spread1, spread2)
+local function Shoot(asd, spread1, spread2)
 	local MainPos = asd.Position
 	local MainPos2 = mouse.Hit.p
 	local spread = Vector3.new((math.random(-spread1, 0) + math.random()) * spread2, (math.random(-spread1, 0) + math.random()) * spread2, (math.random(-spread1, 0) + math.random()) * spread2) * (asd.Position - mouse.Hit.p).magnitude / 100
@@ -489,7 +489,7 @@ gyro.MaxTorque = Vector3.new(0,1e7,0)
 
 local Crouching = false
 
-function Fire()
+local function Fire()
 	if Aiming == true then
 		attack = true
 		CreateSound("rbxassetid://132572951", Barrel, 1, .9)
@@ -627,7 +627,7 @@ end
 
 local Zoomed = false
 
-function Reload()
+local function Reload()
 	attack = true
 	for i = 0, 1, 0.1 do
 		wait()

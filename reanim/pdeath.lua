@@ -186,6 +186,9 @@ Bind.Event:Connect(function()
     pcall(function()
         _G.Disconnect = false
     	_G.Somethinggggggg:Disconnect()
+					for i,v in pairs(_G.EventTable) do
+		v:Disconnect()
+	end
 end)
 game.Players.LocalPlayer.Character = Clone
 game.Players.LocalPlayer.Character:Destroy()

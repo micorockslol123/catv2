@@ -230,19 +230,18 @@ local function CreateSound(id, par, vol, pit)
 	end))
 end
  
-function clerp(a, b, t)
+local function clerp(a, b, t)
 	return a:lerp(b, t)
 end
 
-function rayCast(Pos, Dir, Max, Ignore)
+local function rayCast(Pos, Dir, Max, Ignore)
 	return game:service("Workspace"):FindPartOnRay(Ray.new(Pos, Dir.unit * (Max or 999.999)), Ignore) 
 end 
 
-function Damage(hit, damage, cooldown, Color1, Color2, HSound, HPitch)
+local function Damage(hit, damage, cooldown, Color1, Color2, HSound, HPitch)
 	
 end
-
-function MagnitudeDamage(Part, magni, mindam, maxdam, Color1, Color2, HitSound)
+local function MagnitudeDamage(Part, magni, mindam, maxdam, Color1, Color2, HitSound)
 
 end
 

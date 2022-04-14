@@ -473,7 +473,61 @@ Align(Hat1,Handaru,Vector3.new(0.7, 0, -0.2),Vector3.new(0,0,65))
 
 Knife2.Transparency = 1
 KnifeH.Transparency = 0
+if _G.BulletEnabled == true then
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+local Char = game.Players.LocalPlayer.Character["Cat"]
+local FlingTrigger;
+Bullet.Anchored = true
+_G.Disconnect = true
+local HighLight = Instance.new("SelectionBox", Bullet)
+HighLight.Adornee = Bullet
+HighLight.Color3 = Color3.fromRGB(65,205,102)
+HighLight.LineThickness = 0.3
+Bullet.Transparency = 1
 
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+local BP = Instance.new("BodyPosition", Bullet)
+BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+BP.D = 125
+BP.P = 50000
+local Mouse = game.Players.LocalPlayer:GetMouse()
+local MouseHolding = false
+Mouse.Button1Down:Connect(function()
+MouseHolding = true
+end)
+Mouse.Button1Up:Connect(function()
+MouseHolding = false
+end)
+
+_G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
+Bullet.RotVelocity = Vector3.new(5000,5000,5000)
+if MouseHolding then
+   pcall(function()
+   if game.Players:GetPlayerFromCharacter(Mouse.Target.Parent) then
+      if Mouse.Target.Parent.Name ~= game.Players.LocalPlayer.Name then
+         BP.Position = Mouse.Target.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Head.CFrame.p
+      else
+         BP.Position = Mouse.Hit.p
+      end
+   elseif game.Players:GetPlayerFromCharacter(Mouse.Target.Parent.Parent) then
+      if Mouse.Target.Parent.Parent.Name ~= game.Players.LocalPlayer.Name then
+         BP.Position = Mouse.Target.Parent.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Parent.Head.CFrame.p
+      else
+         BP.Position = Mouse.Hit.p
+      end
+   else
+      BP.Position = Mouse.Hit.p
+   end
+   end)
+else
+   BP.Position = Hat2.Position
+end
+end)
+spawn(function()
+wait(0.1)
+end)
+Bullet.Anchored = false
+end
 local function CreateTrailObj(parent,color1,color2,ofsx,ofsz)
 local Att1 =  New("Attachment",parent,"Att1",{Position = Vector3.new(ofsx,parent.Size.Y/2,ofsz)})
 local Att2 =  New("Attachment",parent,"Att2",{Position = Vector3.new(ofsx,-(parent.Size.Y/2),ofsz)})

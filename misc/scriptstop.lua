@@ -137,8 +137,6 @@ end
 Character.Humanoid.WalkSpeed = 16
 Character.Humanoid.JumpPower = 50
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()
-
 
 if _G.BulletEnabled == true then
 pcall(function()
@@ -153,3 +151,5 @@ game.Players.LocalPlayer.Character:FindFirstChild("Bullet").Transparency = 1
 end
 end)
 end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()

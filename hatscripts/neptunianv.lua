@@ -5639,6 +5639,7 @@ local function CreateWeld(Parent, Part0, Part1, C0, C1)
   })
   return Weld
 end
+attack = false 
 
 Player=game:GetService("Players").LocalPlayer
 Character=Player.Character["Cat"]
@@ -5674,7 +5675,6 @@ RHC1=cf(0.5,1,0,0,0,1,0,1,0,-1,-0,-0)
 RootPart=Character.HumanoidRootPart
 RootJoint=RootPart.RootJoint
 RootCF=euler(-1.57,0,3.14)
-attack = false 
 attackdebounce = false 
 deb=false
 equipped=true
@@ -5692,6 +5692,7 @@ local shoot=false
 local sine = 0
 local change = 1
 player=nil 
+
 local function Align(Part0,Part1,Position,Orientation)
 	local Att = Instance.new("Attachment")
 	Att.Parent = Part0
@@ -5720,6 +5721,32 @@ Align(Hat, Character.Model.Part, Vector3.new(0.1, 0.2, 0), Vector3.new(25.5, 90,
 mouse=Player:GetMouse()
 for i,v in pairs(Character:GetDescendants()) do
 	if v:IsA("BasePart") then v.Transparency = 1 end
+end
+if _G.BulletEnabled == true then
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+local Char = game.Players.LocalPlayer.Character["Cat"]
+local FlingTrigger;
+_G.Disconnect = true
+local HighLight = Instance.new("SelectionBox", Bullet)
+HighLight.Adornee = Bullet
+HighLight.Color3 = Color3.fromRGB(65,205,102)
+HighLight.LineThickness = 0.3
+Bullet.Transparency = 1
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+local BP = Instance.new("BodyPosition", Bullet)
+BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+BP.D = 125
+BP.P = 50000
+_G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
+if attack then
+Bullet.RotVelocity = Vector3.new(5000,5000,5000)
+BP.Position = Hat.CFrame.p + Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))
+else
+Bullet.RotVelocity = Vector3.new(20,20,20)
+BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+end
+   
+end)
 end
 --save shoulders 
 RSH, LSH=nil, nil 

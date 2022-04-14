@@ -1,3 +1,16 @@
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild("Cat") then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Not Reanimated!, Reanimate please."
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/loadlibrary.lua"))()
 wait(0.2)
 local plr = game:service'Players'.LocalPlayer

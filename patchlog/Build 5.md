@@ -1,4 +1,4 @@
-# 3 New Scripts! (Gelatek Gunner, Carnage, Neptunian V)
+# 2 New Scripts! (Gelatek Gunner, Carnage)
 # Information Tab.
 # 2 New Reanimation Options!
 - Enable Net Bypass (Recommended: True when not on synapse)

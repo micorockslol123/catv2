@@ -1,5 +1,5 @@
 
-TheHatLol = "MeshPartAccessory"
+TheHatLol = "Sniper"
 TheHatLol2 = TheHatLol
 
 if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild(TheHatLol) then

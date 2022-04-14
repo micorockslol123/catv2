@@ -128,13 +128,17 @@ _G.ScriptStop = false
 for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
 	v:Stop()
 end
-pcall(function()
-Character.Humanoid.Animator:Destroy()
-local ae = IN("Animator",Character.Humanoid)
-end)
+for i,v in pairs(Character.Humanoid:GetChildren()) do
+	if v:IsA("Animator") then
+		v:Destroy()
+	end
+	local newanim = Instance.new("Animator", v.Parent)
+end
 Character.Humanoid.WalkSpeed = 16
 Character.Humanoid.JumpPower = 50
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()
+
 
 if _G.BulletEnabled == true then
 pcall(function()

@@ -210,6 +210,7 @@ end
 
 -- Preload animations
 function playAnimation(animName, transitionTime, humanoid) 
+	pcall(function()
 		
 	local roll = math.random(1, animTable[animName].totalWeight) 
 	local origRoll = roll
@@ -247,7 +248,7 @@ function playAnimation(animName, transitionTime, humanoid)
 		currentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)
 		
 	end
-
+end)
 end
 
 -------------------------------------------------------------------------------------------
@@ -325,6 +326,7 @@ end
 
 
 function onRunning(speed)
+	pcall(function()
 	if speed > 0.01 then
 		playAnimation("walk", 0.1, Humanoid)
 		if currentAnimInstance and currentAnimInstance.AnimationId == "http://www.roblox.com/asset/?id=180426354" then
@@ -337,6 +339,7 @@ function onRunning(speed)
 			pose = "Standing"
 		end
 	end
+	end)
 end
 
 function onDied()

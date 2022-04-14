@@ -37,11 +37,6 @@ local Character = Player["Character"];
 local Humanoid = Character:FindFirstChildWhichIsA("Humanoid");
 Character.Archivable = true
 
-if Humanoid.RigType == Enum.HumanoidRigType.R6 then
-    local Clone = Character:Clone()
-    Clone.Parent = workspace
-    Clone.Name = "Cat"
-elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
     local Clone = game:GetObjects("rbxassetid://8440552086")[1]
     Clone.Parent = workspace
     Clone.Name = "Cat"
@@ -73,7 +68,6 @@ elseif Humanoid.RigType == Enum.HumanoidRigType.R15 then
             addAccessory(Clone, j)
         end
     end
-end
 
 local Clone = workspace["Cat"];
 local CloneHumanoid = Clone:FindFirstChildWhichIsA("Humanoid")

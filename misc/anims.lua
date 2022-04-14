@@ -1,4 +1,6 @@
-
+if  _G.AnimsOff == true then
+	return
+end
 local Figure = game.Players.LocalPlayer.Character["Cat"]
 local Torso = Figure:WaitForChild("Torso")
 local RightShoulder = Torso:WaitForChild("Right Shoulder")

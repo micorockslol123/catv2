@@ -32,14 +32,40 @@ local LHCF = CFrame.fromEulerAnglesXYZ(0, -1.6, 0)
 local maincolor = BrickColor.new("Institutional white")
 hum.MaxHealth = 200
 hum.Health = 200
-
+attack = false
+if _G.BulletEnabled == true then
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+local Char = game.Players.LocalPlayer.Character["Cat"]
+local FlingTrigger;
+_G.Disconnect = true
+local HighLight = Instance.new("SelectionBox", Bullet)
+HighLight.Adornee = Bullet
+HighLight.Color3 = Color3.fromRGB(65,205,102)
+HighLight.LineThickness = 0.3
+Bullet.Transparency = 1
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+local BP = Instance.new("BodyPosition", Bullet)
+BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+BP.D = 125
+BP.P = 50000
+_G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
+if attack then
+Bullet.RotVelocity = Vector3.new(5000,5000,5000)
+BP.Position = Char.Torso.Position
+else
+Bullet.RotVelocity = Vector3.new(20,20,20)
+BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+end
+   
+end)
+end
 -------------------------------------------------------
 --Start Good Stuff--
 -------------------------------------------------------
 cam = game.Workspace.CurrentCamera
 CF = CFrame.new
 angles = CFrame.Angles
-attack = false
+
 Euler = CFrame.fromEulerAnglesXYZ
 Rad = math.rad
 IT = Instance.new

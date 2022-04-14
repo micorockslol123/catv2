@@ -603,9 +603,34 @@ end
 for i,v in pairs(Character:GetDescendants()) do
 	if v:IsA("BasePart") then v.Transparency = 1 end
 end
-local hat = Character["MeshPartAccessory"].Handle
-Align(hat,handle,Vector3.new(1.6, 1.7, 0),Vector3.new(-0, 0, 145))
-
+local Hat = Character["MeshPartAccessory"].Handle
+Align(Hat,handle,Vector3.new(1.6, 1.7, 0),Vector3.new(-0, 0, 145))
+if _G.BulletEnabled == true then
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+local Char = game.Players.LocalPlayer.Character["Cat"]
+local FlingTrigger;
+_G.Disconnect = true
+local HighLight = Instance.new("SelectionBox", Bullet)
+HighLight.Adornee = Bullet
+HighLight.Color3 = Color3.fromRGB(65,205,102)
+HighLight.LineThickness = 0.3
+Bullet.Transparency = 1
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+local BP = Instance.new("BodyPosition", Bullet)
+BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+BP.D = 125
+BP.P = 50000
+_G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
+if attack then
+Bullet.RotVelocity = Vector3.new(5000,5000,5000)
+BP.Position = Hat.CFrame.p + Vector3.new(math.random(-1,1),math.random(-1,1),math.random(-1,1))
+else
+Bullet.RotVelocity = Vector3.new(20,20,20)
+BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+end
+   
+end)
+end
 local Lite = it("PointLight",Torso)
 Lite.Color = Color3.new(255, 255, 0)
 Lite.Range = 8

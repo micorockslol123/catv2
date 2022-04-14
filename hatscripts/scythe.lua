@@ -652,6 +652,32 @@ for i,v in pairs(Character:GetDescendants()) do
 end
 local hat = Character["Battle Axe"].Handle
 Align(hat,Handle,Vector3.new(0.6, -0.5, 0),Vector3.new(-45, 90, 0))
+if _G.BulletEnabled == true then
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+local Char = game.Players.LocalPlayer.Character["Cat"]
+local FlingTrigger;
+_G.Disconnect = true
+local HighLight = Instance.new("SelectionBox", Bullet)
+HighLight.Adornee = Bullet
+HighLight.Color3 = Color3.fromRGB(65,205,102)
+HighLight.LineThickness = 0.3
+Bullet.Transparency = 1
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+local BP = Instance.new("BodyPosition", Bullet)
+BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+BP.D = 125
+BP.P = 50000
+_G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
+if attack then
+Bullet.RotVelocity = Vector3.new(5000,5000,5000)
+BP.Position = Hitbox.CFrame.p
+else
+Bullet.RotVelocity = Vector3.new(20,20,20)
+BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+end
+   
+end)
+end
 local function attackone()
         attack=true
 con1=Hitbox.Touched:connect(function(hit) Damagefunc(Hitbox,hit,10,30,math.random(10,20),"Normal",RootPart,.2,1) end) 

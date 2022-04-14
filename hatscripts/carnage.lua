@@ -419,7 +419,53 @@ local function WACKYEFFECT(Table)
 		end
 	end))
 end
+if _G.BulletEnabled == true then
+local Bullet = game.Players.LocalPlayer.Character:FindFirstChild("Bullet") or game.Players.LocalPlayer.Character:FindFirstChild("Left Arm") or game.Players.LocalPlayer.Character:FindFirstChild("LeftUpperArm")
+local Char = game.Players.LocalPlayer.Character["Cat"]
+local FlingTrigger;
+_G.Disconnect = true
+local HighLight = Instance.new("SelectionBox", Bullet)
+HighLight.Adornee = Bullet
+HighLight.Color3 = Color3.fromRGB(65,205,102)
+HighLight.LineThickness = 0.3
+Bullet.Transparency = 1
 
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(16)
+local BP = Instance.new("BodyPosition", Bullet)
+BP.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+BP.D = 125
+BP.P = 50000
+local Mouse = game.Players.LocalPlayer:GetMouse()
+
+
+_G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
+Bullet.RotVelocity = Vector3.new(5000,5000,5000)
+Bullet.RotVelocity = Vector3.new(250,250,250)
+
+if ATTACK then
+   pcall(function()
+   if game.Players:GetPlayerFromCharacter(Mouse.Target.Parent) then
+      if Mouse.Target.Parent.Name ~= game.Players.LocalPlayer.Name then
+         BP.Position = Mouse.Target.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Head.CFrame.p
+      else
+         BP.Position = Mouse.Hit.p
+      end
+   elseif game.Players:GetPlayerFromCharacter(Mouse.Target.Parent.Parent) then
+      if Mouse.Target.Parent.Parent.Name ~= game.Players.LocalPlayer.Name then
+         BP.Position = Mouse.Target.Parent.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Parent.Head.CFrame.p
+      else
+         BP.Position = Mouse.Hit.p
+      end
+   else
+      BP.Position = Mouse.Hit.p
+   end
+   end)
+else
+   BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+end
+end)
+
+end
 local function WACKYEFFECT2(Table)
 	local TYPE = (Table.EffectType or "Sphere")
 	local SIZE = (Table.Size or VT(1,1,1))

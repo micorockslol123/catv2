@@ -134,10 +134,15 @@ for i,v in pairs(Character.Humanoid:GetChildren()) do
 	end
 	local newanim = Instance.new("Animator", v.Parent)
 end
+for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+	v:Stop()
+end
 Character.Humanoid.WalkSpeed = 16
 Character.Humanoid.JumpPower = 50
 
-
+for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+	v:Stop()
+end
 if _G.BulletEnabled == true then
 pcall(function()
 _G.Somethinggggggg:Disconnect()
@@ -151,5 +156,7 @@ game.Players.LocalPlayer.Character:FindFirstChild("Bullet").Transparency = 1
 end
 end)
 end
-
+for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
+	v:Stop()
+end
 loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()

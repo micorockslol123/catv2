@@ -1,2 +1,2 @@
 # Bug Fixes
-# Fling For Sword/Free Scripts.
+# Bullet Fling now works For Sword/Free Scripts.

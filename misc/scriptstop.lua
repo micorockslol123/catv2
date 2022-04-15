@@ -68,14 +68,7 @@ end
             addAccessory(Character, j)
         end
     end
-pcall(function()
-    Character.Animate:Destroy()
-end)
 
-
-local Script = IN("LocalScript", Character)
-
-Script.Name = "Animate"
 
 local N = IN("Motor6D", Torso)
 N.Name = "Neck"
@@ -159,4 +152,4 @@ end
 for i,v in pairs(Character.Humanoid:GetPlayingAnimationTracks()) do
 	v:Stop()
 end
-loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/misc/anims.lua"))()
+

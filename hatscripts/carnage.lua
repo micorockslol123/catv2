@@ -139,6 +139,7 @@ Effects.Name = "Effects"
 local ANIMATOR = Humanoid.Animator
 local ANIMATE = Character.Animate
 ANIMATOR:Destroy()
+
 local UNANCHOR = true
 local HITPLAYERSOUNDS = {--[["199149137", "199149186", "199149221", "199149235", "199149269", "199149297"--]]"263032172", "263032182", "263032200", "263032221", "263032252", "263033191"}
 
@@ -1483,7 +1484,6 @@ while true do
 	end
 	Swait()
 	script.Parent = WEAPONGUI
-	ANIMATE.Parent = nil
 	for _,v in next, Humanoid:GetPlayingAnimationTracks() do
 	    v:Stop();
 	end

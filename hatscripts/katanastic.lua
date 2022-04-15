@@ -1,8 +1,45 @@
 
 	TheHatLol = "B&WKatanaAccessory"
 	TheHatLol2 = TheHatLol -- "Police K4LAS [Front]"
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Zaphick3L/MiscStuff/main/ScriptStuff.lua"))()
-
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild(TheHatLol) then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()    
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Missing Hat: ".. TheHatLol
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild(TheHatLol2) then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Missing Hat: ".. TheHatLol2
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild("Cat") then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Not Reanimated!, Reanimate please."
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
 		
 	-- takes a moment to load due to reanimate loading via loadstring (its for hub) thats why.
 	-- hat: 6655796738

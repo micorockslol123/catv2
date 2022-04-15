@@ -1,4 +1,4 @@
-	TheHatLol = "Police K4LAS [Front]"
+TheHatLol = "Police K4LAS [Front]"
 TheHatLol2 = TheHatLol -- "Police K4LAS [Front]"
 if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild(TheHatLol) then
 			local sound = Instance.new("Sound", game.StarterGui)
@@ -63,25 +63,35 @@ wait(0.2)
 _G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
 Bullet.RotVelocity = Vector3.new(5000,5000,5000)
 if Attack then
-   pcall(function()
-   if game.Players:GetPlayerFromCharacter(Mouse.Target.Parent) then
-      if Mouse.Target.Parent.Name ~= game.Players.LocalPlayer.Name then
-         BP.Position = Mouse.Target.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Head.CFrame.p
-      else
-         BP.Position = Mouse.Hit.p
-      end
-   elseif game.Players:GetPlayerFromCharacter(Mouse.Target.Parent.Parent) then
-      if Mouse.Target.Parent.Parent.Name ~= game.Players.LocalPlayer.Name then
-         BP.Position = Mouse.Target.Parent.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Parent.Head.CFrame.p
-      else
-         BP.Position = Mouse.Hit.p
-      end
-   else
-      BP.Position = Mouse.Hit.p
-   end
-   end)
-else
-   BP.Position = Char.Torso.Position + Vector3.new(0,-5,0)
+    pcall(function()
+        if game.Players:GetPlayerFromCharacter(Mouse.Target.Parent) then
+            if Mouse.Target.Parent.Name ~= game.Players.LocalPlayer.Name then
+                if Mouse.Target ~= nil then
+                BP.Position = Mouse.Target.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Head.CFrame.p
+                end
+            else
+                if Mouse.Target ~= nil then
+                BP.Position = Mouse.Hit.p
+                end
+            end
+        elseif game.Players:GetPlayerFromCharacter(Mouse.Target.Parent.Parent) then
+            if Mouse.Target.Parent.Parent.Name ~= game.Players.LocalPlayer.Name then
+                if Mouse.Target ~= nil then
+                BP.Position = Mouse.Target.Parent.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Parent.Head.CFrame.p
+                end
+            else
+                if Mouse.Target ~= nil then
+                BP.Position = Mouse.Hit.p
+                end
+            end
+        else
+            if Mouse.Target ~= nil then
+            BP.Position = Mouse.Hit.p
+            end
+        end
+        end)
+        else
+        BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
 end
 end)
 spawn(function()

@@ -96,25 +96,35 @@ _G.Somethinggggggg = game:GetService("RunService").Heartbeat:Connect(function()
 Bullet.RotVelocity = Vector3.new(5000,5000,5000)
 if attack then
    pcall(function()
-   if game.Players:GetPlayerFromCharacter(Mouse.Target.Parent) then
-      if Mouse.Target.Parent.Name ~= game.Players.LocalPlayer.Name then
-         BP.Position = Mouse.Target.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Head.CFrame.p
-      else
-         BP.Position = Mouse.Hit.p
-      end
-   elseif game.Players:GetPlayerFromCharacter(Mouse.Target.Parent.Parent) then
-      if Mouse.Target.Parent.Parent.Name ~= game.Players.LocalPlayer.Name then
-         BP.Position = Mouse.Target.Parent.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Parent.Head.CFrame.p
-      else
-         BP.Position = Mouse.Hit.p
-      end
-   else
-      BP.Position = Mouse.Hit.p
-   end
-   end)
-else
-   BP.Position = Char.Torso.Position + Vector3.new(0,-5,0)
-end
+    if game.Players:GetPlayerFromCharacter(Mouse.Target.Parent) then
+        if Mouse.Target.Parent.Name ~= game.Players.LocalPlayer.Name then
+            if Mouse.Target ~= nil then
+            BP.Position = Mouse.Target.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Head.CFrame.p
+            end
+        else
+            if Mouse.Target ~= nil then
+            BP.Position = Mouse.Hit.p
+            end
+        end
+    elseif game.Players:GetPlayerFromCharacter(Mouse.Target.Parent.Parent) then
+        if Mouse.Target.Parent.Parent.Name ~= game.Players.LocalPlayer.Name then
+            if Mouse.Target ~= nil then
+            BP.Position = Mouse.Target.Parent.Parent.HumanoidRootPart.CFrame.p or Mouse.Target.Parent.Parent.Head.CFrame.p
+            end
+        else
+            if Mouse.Target ~= nil then
+            BP.Position = Mouse.Hit.p
+            end
+        end
+    else
+        if Mouse.Target ~= nil then
+        BP.Position = Mouse.Hit.p
+        end
+    end
+    end)
+    else
+    BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+    end
 end)
 end
 Ply = game.Players.LocalPlayer
@@ -129,6 +139,7 @@ RA = Char["Right Arm"]
 RL = Char["Right Leg"]
 LS = Tor["Left Shoulder"] 
 RS = Tor["Right Shoulder"] 
+Char.Animate.Disabled = true
 LH = Tor["Left Hip"] 
 RH = Tor["Right Hip"] 
 Combo = 1

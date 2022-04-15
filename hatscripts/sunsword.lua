@@ -48,6 +48,7 @@ PlayerGui=Player.PlayerGui
 Backpack=Player.Backpack 
 Torso=Character.Torso 
 Head=Character.Head 
+Character.Animate.Disabled = true
 Humanoid=Character.Humanoid
 m=Instance.new('Model',Character)
 LeftArm=Character["Left Arm"] 

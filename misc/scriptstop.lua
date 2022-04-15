@@ -69,7 +69,7 @@ end
         end
     end
 
-
+Character.Animate.Disabled = false
 local N = IN("Motor6D", Torso)
 N.Name = "Neck"
 N.Part0 = Torso

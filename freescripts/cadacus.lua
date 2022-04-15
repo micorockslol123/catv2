@@ -187,7 +187,7 @@ beet:Play()
 humanoid.WalkSpeed = 8
 humanoid.JumpPower = 0
 humanoid.Animator.Parent = nil
-Character.Animate.Parent = nil
+Character.Animate.Disabled = true
 
 local newMotor = function(part0, part1, c0, c1)
 	local w = Create('Motor'){

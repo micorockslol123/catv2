@@ -16,6 +16,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/stev15291/catv2/main/
 wait()
 local plr = game:service'Players'.LocalPlayer
 local char = plr.Character["Cat"]
+char.Animate.Disabled = true
 local hum = char.Humanoid
 local ra = char["Right Arm"]
 local la= char["Left Arm"]

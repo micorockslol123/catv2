@@ -1,6 +1,45 @@
 
 TheHatLol = "Battle Axe"
 TheHatLol2 = TheHatLol
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild(TheHatLol) then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()    
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Missing Hat: ".. TheHatLol
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild(TheHatLol2) then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Missing Hat: ".. TheHatLol2
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
+if not workspace[game.Players.LocalPlayer.Name]:FindFirstChild("Cat") then
+			local sound = Instance.new("Sound", game.StarterGui)
+		sound.SoundId = "rbxassetid://8426701399"
+		sound.Volume = 3
+		sound:Play()
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "Project Cat: Reborn",
+			Text = "Not Reanimated!, Reanimate please."
+		})
+		wait(2)
+		sound:Destroy()
+		return
+end
 	local function Align(Part0,Part1,Position,Orientation)
 		local Att = Instance.new("Attachment")
 		Att.Parent = Part0
@@ -30,6 +69,7 @@ Character=Player.Character["Cat"]
 PlayerGui=Player.PlayerGui
 Backpack=Player.Backpack 
 Torso=Character.Torso 
+Character.Animate.Disabled = true
 Head=Character.Head 
 Humanoid=Character.Humanoid
 m=Instance.new('Model',Character)

@@ -530,7 +530,7 @@ if MouseHolding then
         end
         end)
         else
-        BP.Position = Char.Torso.Position + Vector3.new(0,-7,0)
+        BP.Position = Hat2.Position
         end
 end)
 spawn(function()

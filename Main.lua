@@ -217,7 +217,7 @@ end)
 
 Tab5:Button("Copy Carnage Hat", function()
    if setclipboard then
-      setclipboard("4962510729")
+      setclipboard("4962455546")
   end
 end)
 Tab5:Button("Copy Gelatek's Gunner Hat", function()
